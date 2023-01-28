@@ -4,7 +4,8 @@
 
 2. Attach the new VHDX to the VM.
 
-3. In Ubuntu, 
+3. In Ubuntu,
+
 [Pre-work] Delete any existing paritions (if applicable)
 
 [a] verify drive is detected using ```lsblk```. Drive should show up as "sdb".
@@ -48,6 +49,31 @@ Press ``` CTRL+X ``` then ```Y``` then ```ENTER``` to save and exit
 Finally, enter ``` sudo mount -a ``` to mount the drive. 
 
 If no error was thrown, type ``` cd /mnt/docker_data ``` to access the directory.
+
+Return to the root directory by typing ``` cd .. ``` twice.
+
+4. Clone the repository
+
+  ``` sudo git clone https://github.com/LAazsx/MySQL_Container/ ```
+
+  ``` cd ``` into the directory with ``` cd MySQL_Container ```
+
+5. Change the root password with 
+
+``` sudo nano docker-compose.yml ```
+ 
+ and change the <password> in ``` MYSQL_ROOT_PASSWORD=<PASSWORD> ```
+ 
+
+Press ``` CTRL+X ``` then ```Y``` then ```ENTER``` to save and exit
+
+6. Create the container (finally!)
+
+``` sudo docker compose up ```
+
+
+
+
 
 
 
