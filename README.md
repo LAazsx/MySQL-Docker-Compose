@@ -71,7 +71,19 @@ Press ``` CTRL+X ``` then ```Y``` then ```ENTER``` to save and exit
 
 ``` sudo docker compose up ```
 
+7. Configure remote access
+ Open the container's console on portainer. use ``` /bin/sh ```
+ 
+type `mysql -uroot -p` and enter the password set in STEP 5.
 
+Once logged in, enter
+
+```
+mysql> GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost';
+mysql> UPDATE mysql.user SET host='%' WHERE user='root';
+```
+
+Restart the container
 
 
 
