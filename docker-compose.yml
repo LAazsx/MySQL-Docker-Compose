@@ -2,6 +2,7 @@ version: '1'
 services:
   mysql-server:
     image: mysql/mysql-server:8.0.32
+    container_name: mysql
     volumes:
         - /mnt/docker_data/mysql:/var/lib/mysql
     ports:
